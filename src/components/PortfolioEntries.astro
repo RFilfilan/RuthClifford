@@ -1,0 +1,21 @@
+---
+const { items, placeholder } = Astro.props;
+---
+
+{items.length ? (
+	<ul class="entry-list">
+		{items.map((item) => (
+			<li class="entry">
+				<article>
+					{item.meta && <p class="entry-meta">{item.meta}</p>}
+					<h3>
+						{item.href ? <a href={item.href}>{item.title}</a> : item.title}
+					</h3>
+					{item.description && <p class="entry-description">{item.description}</p>}
+				</article>
+			</li>
+		))}
+	</ul>
+) : (
+	<p class="placeholder-note">{placeholder}</p>
+)}

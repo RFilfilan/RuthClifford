@@ -1,0 +1,37 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroSection from '../components/HeroSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import PublicationsSection from '../components/PublicationsSection.astro';
+import BlogSection from '../components/BlogSection.astro';
+import ProjectsSection from '../components/ProjectsSection.astro';
+import CVSection from '../components/CVSection.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { portfolio } from '../data/portfolio.js';
+---
+
+<SiteLayout title={portfolio.title} description={portfolio.description}>
+	<SiteHeader name={portfolio.name} />
+	<main id="main-content">
+		<HeroSection name={portfolio.name} />
+		<AboutSection about={portfolio.about} interests={portfolio.interests} />
+		<PublicationsSection
+			intro={portfolio.publicationsIntro}
+			items={portfolio.publications}
+			placeholder={portfolio.publicationsPlaceholder}
+		/>
+		<BlogSection
+			intro={portfolio.blogIntro}
+			items={portfolio.blogPosts}
+			placeholder={portfolio.blogPlaceholder}
+		/>
+		<ProjectsSection
+			intro={portfolio.projectsIntro}
+			items={portfolio.projects}
+			placeholder={portfolio.projectsPlaceholder}
+		/>
+		<CVSection cv={portfolio.cv} />
+	</main>
+	<SiteFooter name={portfolio.name} />
+</SiteLayout>

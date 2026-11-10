@@ -1,0 +1,19 @@
+---
+const { about, interests } = Astro.props;
+---
+
+<section class="content-section page-shell" id="about" aria-labelledby="about-title">
+	<div class="section-label">
+		<span class="section-number">01</span>
+		<h2 id="about-title">About me</h2>
+	</div>
+	<div class="section-content about-content">
+		<p class="placeholder-note">{about.placeholder}</p>
+		<div class="interests">
+			<h3>Areas of interest</h3>
+			<ul class="tag-list">
+				{interests.map((interest) => <li>{interest}</li>)}
+			</ul>
+		</div>
+	</div>
+</section>

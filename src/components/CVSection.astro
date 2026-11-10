@@ -1,0 +1,13 @@
+---
+const { cv } = Astro.props;
+---
+
+<section class="content-section page-shell" id="cv" aria-labelledby="cv-title">
+	<div class="section-label">
+		<span class="section-number">05</span>
+		<h2 id="cv-title">CV</h2>
+	</div>
+	<div class="section-content cv-content">
+		<p class="placeholder-note">{cv.placeholder}</p>
+	</div>
+</section>
